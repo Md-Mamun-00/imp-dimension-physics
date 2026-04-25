@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Dimensions Cheat Sheet</title>
+    <style>
+        :root {
+            --dark-blue: #1c3c5a;
+            --heading-red: #d9423e;
+            --box-orange: #fff4e6;
+            --text-orange: #d96d00;
+            --box-blue: #e8ebf5;
+            --box-teal: #f4f8f9;
+            --dim-bg: #1c3c5a;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page {
+            width: 210mm; /* A4 Width */
+            min-height: 297mm; /* A4 Height */
+            padding: 20mm;
+            box-sizing: border-box;
+            background: #fff;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--dark-blue);
+            font-size: 24px;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+
+        .header-line {
+            height: 3px;
+            background-color: var(--heading-red);
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        h2 {
+            color: var(--heading-red);
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .card {
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .bg-orange { background-color: var(--box-orange); }
+        .bg-blue { background-color: var(--box-blue); }
+        .bg-teal { background-color: var(--box-teal); }
+
+        .but-text {
+            color: var(--text-orange);
+            font-weight: bold;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .dim-badge {
+            background-color: var(--dim-bg);
+            color: #fff;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-family: inherit;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        /* Ensuring MathJax inside badges stays white */
+        .dim-badge mjx-container {
+            color: #fff !important;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0 0 20px 0;
+            font-size: 13px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .homogeneity-text {
+            color: #27ae60;
+            font-weight: bold;
+            margin: 4px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f9f9f9;
+            color: #555;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 11px;
+            color: #777;
+        }
+
+        .footer span {
+            color: red;
+        }
+    </style>
+
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+<div class="page">
+    <header>
+        <h1>ULTIMATE DIMENSIONS CHEAT SHEET</h1>
+        <div class="header-line"></div>
+    </header>
+
+    <div class="grid-container">
+        <div class="left-col">
+            <div class="section">
+                <h2>1. The "Exceptions & Traps" (Must Know)</h2>
+                
+                <div class="card bg-orange">
+                    <span style="color: var(--dark-blue);"><strong>Length:</strong> Radius, AU, Parsec, Light Year = <span class="dim-badge">$[L]$</span></span>
+                    <span class="but-text">BUT Angular Displacement = $[M^0L^0T^0]$<br>(Dimensionless)</span>
+                </div>
+
+                <div class="card bg-orange">
+                    <span style="color: var(--dark-blue);"><strong>Velocity:</strong> Speed, Avg/Terminal Velocity = <span class="dim-badge">$[LT^{-1}]$</span></span>
+                    <span class="but-text">BUT Angular Velocity = $[T^{-1}]$</span>
+                </div>
+
+                <div class="card bg-orange">
+                    <span style="color: var(--dark-blue);"><strong>Acceleration:</strong> Linear, Intensity of gravitational field (g) = <span class="dim-badge">$[LT^{-2}]$</span></span>
+                    <span class="but-text">BUT Angular Acceleration = $[T^{-2}]$</span>
+                </div>
+
+                <div class="card bg-orange">
+                    <span style="color: var(--dark-blue);"><strong>Force:</strong> Thrust, Drag, Normal Rxn, Tension, Weight = <span class="dim-badge">$[MLT^{-2}]$</span></span>
+                    <span class="but-text">BUT Surface Tension & Spring Constant = $[MT^{-2}]$<br>(Force/Length)</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>2. Standard Dimension Groups</h2>
+                <ul>
+                    <li><strong>Work, All Energies, Torque, Couple:</strong> <span class="dim-badge">$[ML^2T^{-2}]$</span></li>
+                    <li><strong>Pressure, Stress, All Modulus</strong> (Young's, Bulk, Shear, Modulus of Rigidity): <span class="dim-badge">$[ML^{-1}T^{-2}]$</span></li>
+                    <li><strong>Momentum & Impulse:</strong> <span class="dim-badge">$[MLT^{-1}]$</span></li>
+                    <li><strong>Power:</strong> <span class="dim-badge">$[ML^2T^{-3}]$</span></li>
+                    <li><strong>Density:</strong> <span class="dim-badge">$[ML^{-3}]$</span></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>3. Principle of Homogeneity</h2>
+                <div class="card bg-teal">
+                    <ul style="margin-bottom: 0;">
+                        <li><strong>Rule 1:</strong> You can only add, subtract, or equate quantities with the SAME dimensions.
+                            <div class="homogeneity-text">Ex: $L + L = L, \quad L - L = L$.</div>
+                        </li>
+                        <li style="margin-bottom: 0;"><strong>Rule 2:</strong> You CAN multiply or divide physical quantities with different dimensions to create new ones (e.g., Velocity = Length/Time).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-col">
+            <div class="section">
+                <h2>4. Pro-Tips: The Dimensionless Hacks</h2>
+                <div class="card bg-blue">
+                    <strong>The Golden Rule of Functions:</strong><br>
+                    The outputs AND arguments of the following functions are ALWAYS <strong>dimensionless</strong> <span style="color: #27ae60; font-weight: bold;">$[M^0L^0T^0]$</span>:
+                    <ul style="margin-top: 5px; margin-bottom: 10px;">
+                        <li>Trigonometric Ratios: <strong>$\sin(\theta)$, $\cos(\theta)$, $\tan(\theta)$</strong></li>
+                        <li>Exponential Functions: <strong>$e^x$</strong></li>
+                        <li>Logarithmic Functions: <strong>$\log(x)$, $\ln(x)$</strong></li>
+                    </ul>
+                    <em>Exam Application:</em> In equation $y = a \sin(kt)$, the argument $(kt)$ must be dimensionless. Therefore, $[k] = 1/[t] = [T^{-1}]$.
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>5. High-Frequency Exam Constants</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Constant</th>
+                            <th>Formula</th>
+                            <th>Dimension</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gravitational Const (G)</td>
+                            <td>$F = G \frac{m_1 m_2}{r^2}$</td>
+                            <td><span class="dim-badge">$[M^{-1}L^3T^{-2}]$</span></td>
+                        </tr>
+                        <tr>
+                            <td>Planck's Const (h)</td>
+                            <td>$E = h\nu$</td>
+                            <td><span class="dim-badge">$[ML^2T^{-1}]$</span></td>
+                        </tr>
+                        <tr>
+                            <td>Coeff. of Viscosity ($\eta$)</td>
+                            <td>$F = 6\pi\eta r v$</td>
+                            <td><span class="dim-badge">$[ML^{-1}T^{-1}]$</span></td>
+                        </tr>
+                        <tr>
+                            <td>Boltzmann Const (k_B)</td>
+                            <td>$E = k_B T$</td>
+                            <td><span class="dim-badge">$[ML^2T^{-2}K^{-1}]$</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>6. Same Dimension Pairs (Time Savers)</h2>
+                <ul>
+                    <li><strong>$[ML^2T^{-2}]$:</strong> Work, Energy, Torque, Heat.</li>
+                    <li><strong>$[ML^{-1}T^{-2}]$:</strong> Pressure, Stress, Young's Modulus, Energy Density.</li>
+                    <li><strong>$[MLT^{-1}]$:</strong> Linear Momentum, Impulse.</li>
+                    <li><strong>$[ML^2T^{-1}]$:</strong> Angular Momentum, Planck's Constant ($h$).</li>
+                    <li><strong>$[T^{-1}]$:</strong> Frequency, Angular Velocity, Velocity Gradient, Decay Constant.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Created with <span>❤️</span> to help you ace JEE/NEET. "YE Revise kar liya toh Life Jhingalala!"
+    </div>
+</div>
+
+</body>
+</html>
